@@ -1,0 +1,59 @@
+-------------------------------------------------------------------------------
+                 Summary and Brief Explanation of Scripts
+-------------------------------------------------------------------------------
+
+- **use_config.jl**
+  - This script enhances the workflow in the Julia REPL. While useful, it is not 
+    necessary for running the main analyses.
+
+- **thermodynamic_functions.jl**
+  - Contains functions for calculating various thermodynamical variables, such as 
+    saturation vapor pressure.
+
+- **statistical_functions.jl**
+  - Implements custom statistical functions tailored for this analysis, including 
+    methods for binning values into specified tau_600 bins.
+
+- **icon_WCB_functions.jl**
+  - Defines key data analysis functions related to WCB (Warm Conveyor Belt) trajectories. 
+    This script creates global variables, including datasets for `WCB_tau_vars_normed.nc` 
+    and generates masks for convective and slow trajectories. Most function names are 
+    descriptive, such as `calc_DR`, which computes the Drying Ratio (DR). 
+    Non-self-explanatory functions include descriptions within the code.
+
+- **write_PECR.jl**
+  - Writes a netCDF file containing important microphysical variables to the 
+    `nest_data/` directory. The file is pre-populated to save time and computational 
+    resources during later plotting.
+
+- **functions_lin_interp.jl**
+  - Defines functions for efficiently interpolating ICON data onto specified 
+    latitude-longitude-pressure or latitude-longitude-height points. These functions 
+    are primarily used for plotting data at pressure levels relevant to the case study.
+
+- **calculate_mean_wind_shear.jl**
+  - Calculates wind shear near trajectories during ascent. The script relies on 
+    interpolated ICON output. It prints histogram values for plotting, although this part 
+    may be somewhat messy since it’s only used for one non-central plot in the appendix. 
+    The calculation is triggered by the SLURM script located at 
+    `EXECUTE_WIND_SHEAR_CALCULATION/do_calc_mean_wind_shear_mogon.slurm`.
+
+- **pyplots.jl**
+  - Creates plots that require `PyCall` and `Cartopy`. The plotting functions are 
+    defined in this script, which also manages execution. Ensure to set the path to the 
+    ICON output and the directory for ERA5 data (on model levels) before running:
+    ```
+    julia --project=. pyplots.jl
+    ```
+
+- **general_plot_functions.jl**
+  - Contains uniform plotting functions used across various plots. This script is called 
+    by the subsequent script that generates most of the paper's plots (excluding those 
+    from `pyplots.jl`).
+
+- **plot_functions.jl**
+  - This script generates the majority of the plots presented in the paper, excluding 
+    those created by `pyplots.jl`. It executes many functions defined in the previous 
+    scripts. Note that running this script may require significant computational power 
+    and time.
+-------------------------------------------------------------------------------

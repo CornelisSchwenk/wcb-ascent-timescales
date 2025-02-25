@@ -1,0 +1,64 @@
+---------------------------------------------------------------------------
+                       Information on ICON Simulation and Data
+---------------------------------------------------------------------------
+All downloaded ICON data (Lagrangian and Eulerian) must be placed in the same directory.
+
+### Naming Convention for Eulerian Output
+
+The Eulerian output follows this naming convention:
+
+- mod_NWP_global_DOM0X_yyyymmddTHHMMSSZ.nc
+- mod_dq_global_DOM01_yyyymmddTHHMMSSZ.nc
+- NWP_DOM01_4NN_DOM01_yyyymmddTHHMMSSZ.nc
+
+Where:
+- **X** = Domain number (1, 2, 3)
+
+The `mod_NWP*` files contain the following keys:
+- ["lon", "lat", "height", "height_bnds", "height_2", "time",
+  "u", "v", "w", "temp", "pres", "rho", "div", "rh", "vor", "pv",
+  "pv_full", "qv", "qc", "qi", "qr", "qs", "qg", "qh", "qnc",
+  "qnr", "qni", "qns", "qng", "qnh", "tqr", "tqc", "tqs", "tqi",
+  "tqg", "pres_sfc", "pres_msl", "cape_ml", "cin_ml", "tot_prec",
+  "prec_con", "lhfl_s", "shfl_s", "clct"]
+
+The `mod_dq*` files have the following keys:
+- ["lon", "lat", "height", "height_bnds", "height_2", "time",
+  "u", "v", "w", "temp", "pres", "rho", "div", "rh", "vor", "pv",
+  "pv_full", "qv", "qc", "qi", "qr", "qs", "qg", "qh", "qnc",
+  "qnr", "qni", "qns", "qng", "qnh", "tqr", "tqc", "tqs", "tqi",
+  "tqg", "dTH_rads", "ddt_temp_radlw", "dTH_con", "dTH_radl",
+  "dTH_turb", "dTH_drag", "pres_sfc", "pres_msl", "cape_ml",
+  "cin_ml", "tot_prec", "prec_con", "lhfl_s", "shfl_s"]
+
+The `NWP*` files include the following keys:
+- ["lon", "lat", "plev", "time", "u", "v", "w", "temp", "qv",
+  "geopot", "rho", "pv"]
+
+### Naming Convention for Lagrangian Output
+
+The Lagrangian output follows this naming convention:
+
+- traj_0N_tstTTTTTTTT_p00M_dom00X.nc
+
+Where:
+- **N**: The variables are split across N different trajectory files due to size.
+- **TTTTTTTT**: Represents the runtime.
+- **M**: If there are too many trajectories, a new file is created.
+- **X**: Indicates the domain.
+
+Note: If a trajectory is in domain 3 at a given runtime, all values in the `traj*_dom001.nc` or `traj*_dom002.nc` files for that trajectory will be zero at that time.
+
+The Lagrangian files contain the following keys:
+- ["idx", "CellId", "lon", "lat", "alt", "rtime", "w_v", "rho",
+  "t", "p", "pv", "tmin", "tmax", "qv", "qc", "qr", "qi", "qs",
+  "qg", "qh", "qnc", "qnr", "qni", "qns", "qng", "qnh", "qi_in",
+  "qs_in", "qg_in", "qh_in", "qr_in", "qi_out", "qs_out",
+  "qg_out", "qh_out", "qr_out", "r_evap", "f_evap", "evap",
+  "subl", "r_melt", "c_melt", "cond", "depo", "qc_nuc",
+  "qi_hom", "qihh", "wbf", "qx_dep", "satad2", "r_frez",
+  "qx_rim", "ni_hom", "ni_hh", "nc_nuc", "n_sim", "qvturb",
+  "qcturb", "qiturb", "qvconv", "qcconv", "qrconv", "qiconv",
+  "qsconv", "qvturc", "qcturc"]
+
+For more information read the Paper, Appendix and Supplementary Information
