@@ -8,8 +8,7 @@ by **Cornelis Schwenk**.
 This project involves **data analysis and visualization** using **Julia** and **Python** to study moisture transport by **Warm Conveyor Belts (WCBs)** into the **Upper Troposphere and Lower Stratosphere (UTLS)**.
 
 
-![Visualization](assets/visualization.gif)
-
+![Visualization](assets/WCB.gif)
 
 ---
 
