@@ -1,14 +1,13 @@
 # WCB Moisture Transport Analysis
 
 This repository contains the code and instructions to reproduce the results from the **2024 paper** titled:  
-**"The Role of Ascent Timescale for WCB Moisture Transport into the UTLS"**  
-by **Cornelis Schwenk**.
+**"The role of ascent timescales for warm conveyor belt (WCB) moisture transport into the upper troposphere and lower stratosphere (UTLS)"**  
+by **Cornelis Schwenk** (https://doi.org/10.5194/acp-24-14073-2024)
+
+![Visualization](assets/WCB.gif)
 
 ## Overview
 This project involves **data analysis and visualization** using **Julia** and **Python** to study moisture transport by **Warm Conveyor Belts (WCBs)** into the **Upper Troposphere and Lower Stratosphere (UTLS)**.
-
-
-![Visualization](assets/WCB.gif)
 
 ---
 
