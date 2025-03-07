@@ -7,7 +7,7 @@ This repository contains the code and instructions to reproduce the results from
 by **Cornelis Schwenk** and **Annette Miltenberger**. 
 https://doi.org/10.5194/acp-24-14073-2024
 
-![Visualization](assets/WCB.gif)
+![Visualization](assets/WCB_new.gif)
 
 ## Overview
 This project involves **data analysis and visualization** using **Julia** and **Python** to study moisture transport by **Warm Conveyor Belts (WCBs)** into the **Upper Troposphere and Lower Stratosphere (UTLS)**.
